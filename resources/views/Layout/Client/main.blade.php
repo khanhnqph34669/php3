@@ -1,0 +1,10 @@
+@include('Layout.Client.head')
+<body>
+@include('Layout.Client.header')
+<main>
+    @yield('content')
+</main>
+@include('Layout.Client.footer')
+@include('Layout.Client.script')
+</body>
+</html>
