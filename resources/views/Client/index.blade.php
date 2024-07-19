@@ -11,9 +11,10 @@
                         <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                         <div class="trending-animated">
                             <ul id="js-news" class="js-hidden">
-                                <li class="news-item">Bangladesh dolor sit amet, consectetur adipisicing elit.</li>
-                                <li class="news-item">Spondon IT sit amet, consectetur.......</li>
-                                <li class="news-item">Rem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                                @foreach ($trendingPost as $item)
+                                
+                                <li class="news-item"><a href="{{url('/detail/'.$item->slug)}}"><span class="color3">{{$item->category_name}}</span> {{$item->title}}</a></li>
+                                @endforeach                                
                             </ul>
                         </div>
                         
@@ -25,99 +26,47 @@
                     <!-- Trending Top -->
                     <div class="trending-top mb-30">
                         <div class="trend-top-img">
-                            <img src="{{asset("Client/assets/img/trending/trending_top.jpg")}}" alt="">
+                            <img src="{{$firstPost->thumbnail}}" alt="">
                             <div class="trend-top-cap">
-                                <span>Appetizers</span>
-                                <h2><a href="details.html">Welcome To The Best Model Winner<br> Contest At Look of the year</a></h2>
+                                <span>{{$firstPost->category_name}}</span>
+                                <h2><a href="{{url('/detail/'.$firstPost->slug)}}">{{$firstPost->title}}</a></h2>
                             </div>
                         </div>
                     </div>
                     <!-- Trending Bottom -->
                     <div class="trending-bottom">
                         <div class="row">
-                            <div class="col-lg-4">
-                            <div class="single-bottom mb-35">
-                                <div class="trend-bottom-img mb-30">
-                                    <img src="{{asset("Client/assets/img/trending/trending_bottom1.jpg")}}" alt="">
-                                </div>
-                                <div class="trend-bottom-cap">
-                                    <span class="color1">Lifestyple</span>
-                                    <h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
-                                </div>
-                            </div>
-                            </div>
+                            @foreach ($threePostSecond as $item)
                             <div class="col-lg-4">
                                 <div class="single-bottom mb-35">
                                     <div class="trend-bottom-img mb-30">
-                                        <img src="{{asset("Client/assets/img/trending/trending_bottom2.jpg")}}" alt="">
+                                        <img src="{{$item->thumbnail}}" alt="">
                                     </div>
                                     <div class="trend-bottom-cap">
-                                        <span class="color2">Sports</span>
-                                        <h4><h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4></h4>
+                                        <span class="color3">{{$item->category_name}}</span>
+                                        <h4><a href="{{url('/detail/'.$item->slug)}}"> {{$item->title}}</a></h4>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <div class="single-bottom mb-35">
-                                    <div class="trend-bottom-img mb-30">
-                                        <img src="{{asset("Client/assets/img/trending/trending_bottom3.jpg")}}" alt="">
-                                    </div>
-                                    <div class="trend-bottom-cap">
-                                        <span class="color3">Travels</span>
-                                        <h4><a href="details.html"> Welcome To The Best Model Winner Contest</a></h4>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+                            
                         </div>
                     </div>
                 </div>
                 <!-- Riht content -->
                 <div class="col-lg-4">
+                    @foreach ($fivePostRight as $item)
                     <div class="trand-right-single d-flex">
                         <div class="trand-right-img">
-                            <img src="{{asset("Client/assets/img/trending/right1.jpg")}}" alt="">
+                            <img src="{{$item->thumbnail}}" class="img-thumbnail" alt="">
                         </div>
                         <div class="trand-right-cap">
-                            <span class="color1">Concert</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
+                            <span class="color1">{{$item->category_name}}</span>
+                            <h4><a href="{{url('/detail/'.$item->slug)}}">{{$item->title}}</a></h4>
                         </div>
                     </div>
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="{{asset("Client/assets/img/trending/right2.jpg")}}" alt="">
-                        </div>
-                        <div class="trand-right-cap">
-                            <span class="color3">sea beach</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div>
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="{{asset("Client/assets/img/trending/right3.jpg")}}" alt="">
-                        </div>
-                        <div class="trand-right-cap">
-                            <span class="color2">Bike Show</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div> 
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="{{asset("Client/assets/img/trending/right4.jpg")}}" alt="">
-                        </div>
-                        <div class="trand-right-cap">
-                            <span class="color4">See beach</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div>
-                    <div class="trand-right-single d-flex">
-                        <div class="trand-right-img">
-                            <img src="{{asset("Client/assets/img/trending/right5.jpg")}}" alt="">
-                        </div>
-                        <div class="trand-right-cap">
-                            <span class="color1">Skeping</span>
-                            <h4><a href="details.html">Welcome To The Best Model Winner Contest</a></h4>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>

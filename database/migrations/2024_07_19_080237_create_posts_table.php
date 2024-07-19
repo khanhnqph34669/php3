@@ -19,6 +19,9 @@ return new class extends Migration
             $table->foreignIdFor(Category::class)->constrained();
             $table->string('title');
             $table->longText('content');
+            $table->string('slug');
+            $table->string('thumbnail')->nullable();
+            $table->string('hagtag')->nullable();
             $table->timestamps();
            
         });

@@ -53,7 +53,7 @@
                                 <nav>                  
                                     <ul id="navigation">    
                                         <li><a href="{{url('/')}}">Home</a></li>
-                                        <li><a href="{{url('/categories')}}">Category</a></li>
+                                        <li><a href="{{url('/category')}}">Category</a></li>
                                         <li><a href="{{url('/about')}}">About</a></li>
                                         <li><a href="">Latest News</a></li>
                                         <li><a href="contact.html">Contact</a></li>
@@ -73,8 +73,8 @@
                             <div class="header-right-btn f-right d-none d-lg-block">
                                 <i class="fas fa-search special-tag"></i>
                                 <div class="search-box">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search">
+                                    <form action="{{ route('search.results') }}" method="GET">
+                                        <input type="text" name="query" placeholder="Search">
                                     </form>
                                 </div>
                             </div>
