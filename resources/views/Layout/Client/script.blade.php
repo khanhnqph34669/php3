@@ -38,3 +38,33 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="{{asset("Client/assets/js/plugins.js")}}"></script>
         <script src="{{asset("Client/assets/js/main.js")}}"></script>
+
+        <script>
+            function formatDate(date) {
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const monthsOfYear = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            const dayOfWeek = daysOfWeek[date.getDay()];
+            const day = date.getDate();
+            const month = monthsOfYear[date.getMonth()];
+            const year = date.getFullYear();
+
+            const daySuffix = (day) => {
+                if (day > 3 && day < 21) return 'th';
+                switch (day % 10) {
+                    case 1:  return "st";
+                    case 2:  return "nd";
+                    case 3:  return "rd";
+                    default: return "th";
+                }
+            }
+
+            return `${dayOfWeek}, ${day}${daySuffix(day)} ${month}, ${year}`;
+        }
+
+        const currentDate = new Date(); // Lấy thời điểm hiện tại
+        const formattedDate = formatDate(currentDate); // Định dạng thời điểm hiện tại
+
+        // Chèn ngày tháng đã định dạng vào phần tử HTML
+        document.getElementById('current-date').innerText = formattedDate;
+        </script>

@@ -324,3 +324,4 @@ $('.close-icon').click(function(){
 
 
 })(jQuery);
+

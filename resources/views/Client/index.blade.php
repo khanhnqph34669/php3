@@ -159,7 +159,7 @@
                         </div>
                         <div class="weekly-single">
                             <div class="weekly-img">
-                                    <img src="<img src="{{asset("Client/assets/img/news/weeklyNews3.jpg")}}" alt="">
+                                    <img src="{{asset("Client/assets/img/news/weeklyNews3.jpg")}}" alt="">
                             </div>
                             <div class="weekly-caption">
                                 <span class="color1">Strike</span>
@@ -596,7 +596,7 @@
                     <div class="weekly2-news-active dot-style d-flex dot-style">
                         <div class="weekly2-single">
                             <div class="weekly2-img">
-                                <img src="assets/img/news/weekly2News1.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/weekly2News1.jpg")}}" alt="">
                             </div>
                             <div class="weekly2-caption">
                                 <span class="color1">Corporate</span>
@@ -606,7 +606,7 @@
                         </div> 
                         <div class="weekly2-single">
                             <div class="weekly2-img">
-                                <img src="assets/img/news/weekly2News2.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/weekly2News2.jpg")}}" alt="">
                             </div>
                             <div class="weekly2-caption">
                                 <span class="color1">Event night</span>
@@ -616,7 +616,7 @@
                         </div> 
                         <div class="weekly2-single">
                             <div class="weekly2-img">
-                                <img src="assets/img/news/weekly2News3.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/weekly2News3.jpg")}}" alt="">
                             </div>
                             <div class="weekly2-caption">
                                 <span class="color1">Corporate</span>
@@ -626,7 +626,7 @@
                         </div>
                          <div class="weekly2-single">
                             <div class="weekly2-img">
-                                <img src="assets/img/news/weekly2News4.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/weekly2News4.jpg")}}" alt="">
                             </div>
                             <div class="weekly2-caption">
                                 <span class="color1">Event time</span>
@@ -636,7 +636,7 @@
                         </div> 
                          <div class="weekly2-single">
                             <div class="weekly2-img">
-                                <img src="assets/img/news/weekly2News4.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/weekly2News4.jpg")}}" alt="">
                             </div>
                             <div class="weekly2-caption">
                                 <span class="color1">Corporate</span>
@@ -746,7 +746,7 @@
                     <div class="recent-active dot-style d-flex dot-style">
                         <div class="single-recent mb-100">
                             <div class="what-img">
-                                <img src="assets/img/news/recent1.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/recent1.jpg")}}" alt="">
                             </div>
                             <div class="what-cap">
                                 <span class="color1">Night party</span>
@@ -755,7 +755,7 @@
                         </div>
                         <div class="single-recent mb-100">
                             <div class="what-img">
-                                <img src="assets/img/news/recent2.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/recent2.jpg")}}" alt="">
                             </div>
                             <div class="what-cap">
                                 <span class="color1">Night party</span>
@@ -764,7 +764,7 @@
                         </div>
                         <div class="single-recent mb-100">
                             <div class="what-img">
-                                <img src="assets/img/news/recent3.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/recent3.jpg")}}" alt="">
                             </div>
                             <div class="what-cap">
                                 <span class="color1">Night party</span>
@@ -773,7 +773,7 @@
                         </div>
                         <div class="single-recent mb-100">
                             <div class="what-img">
-                                <img src="assets/img/news/recent2.jpg" alt="">
+                                <img src="{{asset("Client/assets/img/news/recent2.jpg")}}" alt="">
                             </div>
                             <div class="what-cap">
                                 <span class="color1">Night party</span>

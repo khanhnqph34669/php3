@@ -9,7 +9,7 @@
                             <div class="header-info-left">
                                 <ul>     
                                     <li><img src="{{asset("Client/assets/img/icon/header_icon1.png")}}" alt="">34ºc, Sunny </li>
-                                    <li><img src="{{asset("Client/assets/img/icon/header_icon2.png")}}" alt="">Tuesday, 18th June, 2019</li>
+                                    <li><img src="{{asset("Client/assets/img/icon/header_icon2.png")}}" alt=""><span id="current-date"></span></li>
                                 </ul>
                             </div>
                             <div class="header-info-right">
@@ -53,8 +53,8 @@
                                 <nav>                  
                                     <ul id="navigation">    
                                         <li><a href="{{url('/')}}">Home</a></li>
-                                        <li><a href="">Category</a></li>
-                                        <li><a href="">About</a></li>
+                                        <li><a href="{{url('/categories')}}">Category</a></li>
+                                        <li><a href="{{url('/about')}}">About</a></li>
                                         <li><a href="">Latest News</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                         <li><a href="#">Pages</a>
@@ -75,7 +75,6 @@
                                 <div class="search-box">
                                     <form action="#">
                                         <input type="text" placeholder="Search">
-                                        
                                     </form>
                                 </div>
                             </div>
