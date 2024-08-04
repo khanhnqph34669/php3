@@ -17,7 +17,8 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $firstPost = DB::table('posts')
+        try{
+            $firstPost = DB::table('posts')
             ->join('categories', 'posts.category_id', '=', 'categories.id')
             ->select('posts.*', 'categories.name as category_name')
             ->inRandomOrder()
@@ -62,6 +63,92 @@ class HomeController extends Controller
             ->inRandomOrder()
             ->limit(3)
             ->get();
+        }catch(\Exception $e){
+            $firstPost = [
+                'title' => 'Không có bài viết nào',
+                'content' => 'Không có bài viết nào',
+                'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                'category_name' => 'Không có bài viết nào',
+                'slug' => 'Không có bài viết nào',
+            ];
+            $threePostSecond = [
+                [
+                    'title' => 'Không có bài viết nào',
+                    'content' => 'Không có bài viết nào',
+                    'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ],
+                [
+                    'title' => 'Không có bài viết nào',
+                    'content' => 'Không có bài viết nào',
+                    'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ],
+                [
+                    'title' => 'Không có bài viết nào',
+                    'content' => 'Không có bài viết nào',
+                    'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ]
+            ];
+            $fivePostRight = [
+                [
+                    'title' => 'Không có bài viết nào',
+                    'content' => 'Không có bài viết nào',
+                    'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ],
+                [
+                    'title' => 'Không có bài viết nào',
+                    'content' => 'Không có bài viết nào',
+                    'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ],
+                [
+                    'title' => 'Không có bài viết nào',
+                    'content' => 'Không có bài viết nào',
+                    'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ],
+                [
+                    'title' => 'Không có bài viết nào',
+                    'content' => 'Không có bài viết nào',
+                    'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ],
+                [
+                    'title' => 'Không có bài viết nào',
+                    'content' => 'Không có bài viết nào',
+                    'thumbnail' => 'https://dibo.vn/wp-content/uploads/2020/12/news.jpg',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ]
+            ];
+            $trendingPost = [
+                [
+                    'title' => 'Không có bài viết nào',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ],
+                [
+                    'title' => 'Không có bài viết nào',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ],
+                [
+                    'title' => 'Không có bài viết nào',
+                    'category_name' => 'Không có bài viết nào',
+                    'slug' => 'Không có bài viết nào',
+                ]
+            ];
+        }
         return view("Client.index", compact('firstPost', 'threePostSecond', 'fivePostRight', 'trendingPost'));
     }
 

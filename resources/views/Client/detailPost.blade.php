@@ -17,22 +17,22 @@
                                 @endforeach  
                                 </ul>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
                <div class="row">
                     <div class="col-lg-8">
                         <!-- Trending Tittle -->
+                        <div class="container">
                         <div class="about-right mb-90">
                             <div class="about-img">
-                                <img src="{{$post->thumbnail}}" alt="">
+                                <img src="{{ \Storage::url($post->thumbnail) }}" alt="">
                             </div>
                             <div class="section-tittle mb-30 pt-30">
                                 <h3>{{$post->title}}</h3>
                             </div>
                             <div class="about-prea">
-                                {{$post->content}}
+                                {!! $post->content !!}
                             </div> 
                             <div class="social-share pt-30">
                                 <div class="section-tittle">
@@ -77,6 +77,7 @@
                                     </div>
                                 </form>
                             </div>
+                        </div>
                         </div>
                     </div>
                     <div class="col-lg-4">

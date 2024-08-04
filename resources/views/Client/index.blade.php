@@ -25,8 +25,8 @@
                 <div class="col-lg-8">
                     <!-- Trending Top -->
                     <div class="trending-top mb-30">
-                        <div class="trend-top-img">
-                            <img src="{{$firstPost->thumbnail}}" alt="">
+                        <div class="trend-top-img firstimg">
+                            <img src="{{ \Storage::url($firstPost->thumbnail) }}" alt="">
                             <div class="trend-top-cap">
                                 <span>{{$firstPost->category_name}}</span>
                                 <h2><a href="{{url('/detail/'.$firstPost->slug)}}">{{$firstPost->title}}</a></h2>
@@ -40,7 +40,7 @@
                             <div class="col-lg-4">
                                 <div class="single-bottom mb-35">
                                     <div class="trend-bottom-img mb-30">
-                                        <img src="{{$item->thumbnail}}" alt="">
+                                        <img src="{{ \Storage::url($item->thumbnail) }}" alt="">
                                     </div>
                                     <div class="trend-bottom-cap">
                                         <span class="color3">{{$item->category_name}}</span>
@@ -58,7 +58,7 @@
                     @foreach ($fivePostRight as $item)
                     <div class="trand-right-single d-flex">
                         <div class="trand-right-img">
-                            <img src="{{$item->thumbnail}}" class="img-thumbnail" alt="">
+                            <img src="{{ \Storage::url($item->thumbnail) }}" class="img-thumbnail" alt="">
                         </div>
                         <div class="trand-right-cap">
                             <span class="color1">{{$item->category_name}}</span>
@@ -756,4 +756,20 @@
         </div>
     </div>
 </div>
+
+<style>
+        .firstimg {
+    width: 700px; /* Hoặc kích thước bạn muốn */
+    height: 500px; /* Hoặc kích thước bạn muốn */
+    position: relative; /* Đặt vị trí tương đối để căn chỉnh ảnh bên trong nếu cần */
+    overflow: hidden; /* Ẩn phần ảnh bị tràn ra ngoài khung */
+}
+
+.firstimg img {
+    width: 100%; /* Chiều rộng 100% của thẻ cha */
+    height: 100%; /* Chiều cao 100% của thẻ cha */
+    object-fit: cover; /* Cắt ảnh để lấp đầy khung mà không bị biến dạng */
+    object-position: center; /* Căn giữa ảnh */
+}
+</style>
 @endsection

@@ -13,8 +13,6 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        for($i=0; $i<10; $i++) {
-            User::factory()->create();
-        }
+       User::factory()->count(10)->create();
     }
 }

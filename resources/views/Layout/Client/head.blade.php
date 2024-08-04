@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>News HTML-5 Template </title>
+        <title>@yield('title')</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -22,4 +22,5 @@
             <link rel="stylesheet" href="{{asset("Client/assets/css/slick.css")}}">
             <link rel="stylesheet" href="{{asset("Client/assets/css/nice-select.css")}}">
             <link rel="stylesheet" href="{{asset("Client/assets/css/style.css")}}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
    </head>
