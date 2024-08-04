@@ -1,4 +1,5 @@
 @extends('Layout.Admin.main')
+@section('title', 'Posts')
 @section('content')
     <div class="container-fluid py-4">
         <div class="row">

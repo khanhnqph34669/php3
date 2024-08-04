@@ -51,10 +51,10 @@ class QuestionController extends Controller
             ],
             'system_prompt' => 'Tập trung vào việc cung cấp thông tin chính xác tại việt nam năm 2024, cập nhật liên quan đến tin tức và các sự kiện hiện tại Việt Nam. Nếu được hỏi về ý kiến, hãy làm rõ rằng bạn cung cấp thông tin thực tế hơn là quan điểm cá nhân. Câu trả lời luôn luôn bằng tiếng Việt!',
             'model' => 'gpt4.2-turbo',
-            'temperature' => 0.7,
+            'temperature' => 0.5,
             'top_k' => 5,
             'top_p' => 0.9,
-            'max_tokens' => 10000,
+            'max_tokens' => 1000,
             'web_access' => null
         ]);
 

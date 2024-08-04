@@ -1,4 +1,5 @@
 @extends('Layout.Client.main')
+@section('title','Trang chủ')
 @section('content')
 <div class="trending-area fix">
     <div class="container">
@@ -11,8 +12,7 @@
                         <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
                         <div class="trending-animated">
                             <ul id="js-news" class="js-hidden">
-                                @foreach ($trendingPost as $item)
-                                
+                                @foreach ($trendingPost as $item) 
                                 <li class="news-item"><a href="{{url('/detail/'.$item->slug)}}"><span class="color3">{{$item->category_name}}</span> {{$item->title}}</a></li>
                                 @endforeach                                
                             </ul>

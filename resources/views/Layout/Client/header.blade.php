@@ -41,9 +41,11 @@
                                 <p class="name-user">{{ Auth::user()->name }}</p>
                                 <form action="{{ route('auth.logout') }}" method="POST">
                                     @csrf
-                                    <button type="submit" class=" btn-logout">Logout</button>
+                                    <button type="submit" class="btn-logout">Logout</button>
                                 </form>
-
+                                @if (Auth::user()->role_id == 1)
+                                    <a href="{{ route('admin.dashboard') }}" class="btn-logout">Dashboard</a>
+                                @endif
                                    
                                 @else
                                     <a href="{{ route('auth.LoadLoginform') }}" class="btn header-btn btn-sm">Login</a>
@@ -71,7 +73,6 @@
                                         <li><a href="{{ url('/') }}">Home</a></li>
                                         <li><a href="{{ url('/category') }}">Category</a></li>
                                         <li><a href="{{ url('/about') }}">About</a></li>
-                                        <li><a href="">Latest News</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                         <li><a href="#">Pages</a>
                                             <ul class="submenu">

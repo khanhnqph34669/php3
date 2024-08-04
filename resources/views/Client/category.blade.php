@@ -1,4 +1,5 @@
 @extends('Layout.Client.main')
+@section('title', 'Category')
 @section('content')
     <!-- Whats New Start -->
     <section class="whats-news-area pt-50 pb-20">

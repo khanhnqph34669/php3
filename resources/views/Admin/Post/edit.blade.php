@@ -1,4 +1,5 @@
 @extends('Layout.Admin.main')
+@section('title', 'Edit Post')
 @section('content')
 <div class="container-fluid py-4">
     <div class="card-header pb-0">

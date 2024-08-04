@@ -179,6 +179,8 @@ class HomeController extends Controller
             ->inRandomOrder()
             ->limit(3)
             ->get();
+
+            DB::table('posts')->where('id', $post->id)->increment('views');
         return view("Client.detailPost", compact("post","trendingPost"));
     }
 

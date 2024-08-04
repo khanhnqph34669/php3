@@ -1,4 +1,5 @@
 @extends('Layout.Client.main')
+@section('title', 'Detail Post')
 @section('content')
      <!-- About US Start -->
      <div class="about-area">
