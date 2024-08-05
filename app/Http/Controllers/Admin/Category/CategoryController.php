@@ -17,8 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('id','desc')->paginate(10);
-        return view('Admin.Categories.index',compact('categories'));
+        $categories = Category::orderBy('id', 'desc')->paginate(10);
+        return view('Admin.Categories.index', compact('categories'));
     }
 
     /**
@@ -35,7 +35,7 @@ class CategoryController extends Controller
     public function store(StoreRequest $request)
     {
         $category = Category::create($request->all());
-        return redirect()->route('admin.dashboard.categories.index')->with('success','Thêm danh mục thành công');
+        return redirect()->route('admin.dashboard.categories.index')->with('success', 'Thêm danh mục thành công');
     }
 
     /**
@@ -52,7 +52,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = Category::findOrFail($id);
-        return view('Admin.Categories.edit',compact('category'));
+        return view('Admin.Categories.edit', compact('category'));
     }
 
     /**
@@ -60,14 +60,13 @@ class CategoryController extends Controller
      */
     public function update(UpdateRequest $request, $id)
     {
-       try{
-        $category = Category::findOrFail($id);
-       $category->update($request->all());
-        return redirect()->route('admin.dashboard.categories.index')->with('success','Cập nhật danh mục thành công');
-       }
-       catch (Exception $e){
-        return redirect()->route('admin.dashboard.categories.edit',$id)->with('error','Cập nhật danh mục thất bại + '.$e->getMessage());
-       }
+        try {
+            $category = Category::findOrFail($id);
+            $category->update($request->all());
+            return redirect()->route('admin.dashboard.categories.index')->with('success', 'Cập nhật danh mục thành công');
+        } catch (Exception $e) {
+            return redirect()->route('admin.dashboard.categories.edit', $id)->with('error', 'Cập nhật danh mục thất bại + ' . $e->getMessage());
+        }
     }
 
     /**
@@ -75,17 +74,16 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-       try{
-        $post = DB::table('posts')->where('category_id',$id)->get();
-        if(count($post) > 0){
-            return redirect()->route('admin.dashboard.categories.index')->with('error','Danh mục này đang chứa bài viết');
-        }else{
-            DB::table('categories')->where('id',$id)->delete();
-            return redirect()->route('admin.dashboard.categories.index')->with('success','Xóa danh mục thành công');
-        }
-       }
-       catch(Exception $e){
-        return redirect()->route('admin.dashboard.categories.index')->with('error','Xóa danh mục thất bại + '.$e->getMessage());
-       }
+        try {
+            $post = DB::table('posts')->where('category_id', $id)->get();
+            if (count($post) > 0) {
+                return redirect()->route('admin.dashboard.categories.index')->with('error', 'Danh mục này đang chứa bài viết');
+            } else {
+                DB::table('categories')->where('id', $id)->delete();
+                return redirect()->route('admin.dashboard.categories.index')->with('success', 'Xóa danh mục thành công');
+            }
+        } catch (Exception $e) {
+            return redirect()->route('admin.dashboard.categories.index')->with('error', 'Xóa danh mục thất bại + ' . $e->getMessage());
+        }   
     }
 }
